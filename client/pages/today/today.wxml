@@ -1,0 +1,15 @@
+<!--pages/today/today.wxml-->
+<date-picker 
+    startTime="{{startTime}}" 
+    endTime="{{endTime}}"
+    unit="{{unit}}"
+    reserveUnit="{{reserveUnit}}"
+    unreserveTime="{{unreserveTime}}"
+    activedConst="{{activedConst}}"
+    disabledConst="{{disabledConst}}"
+    themeColor="#1f78d1"
+    bind:selectTime="onSelectTime"
+/>
+
+
+<text>TODAY</text>
