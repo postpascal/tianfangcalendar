@@ -12,59 +12,140 @@ Page({
     today: '',//今天的年月日
     currentMonth: '',
     currentYear: '',
-    choose: [],
-    chooseDate: [],
+    pMonth: '',
+    pYear: '',
+    // choose: [],
+    // chooseDate: [],
   },
   //输出选择的日期
-  _calendarSubmit: function () {
-    if (this.data.choose.length == 0) {
-      return false;
-    }
-    var chooseDate = [];
-    for (var i = 0; i < this.data.choose.length; i++) {
-      var thisDate = this.data.choose[i];
-      var thisMonth = thisDate.substr(5, 2);
-      var thisDay = thisDate.substr(8, 2);
-      chooseDate.push(parseInt(thisMonth) + '月' + parseInt(thisDay) + '日')
-    }
-    this.setData({
-      // calendar: false,//点击按钮后隐藏日历
-      chooseDate: chooseDate,
-    })
-    console.log(chooseDate);
-  },
+  // _calendarSubmit: function () {
+  //   if (this.data.choose.length == 0) {
+  //     return false;
+  //   }
+  //   var chooseDate = [];
+  //   for (var i = 0; i < this.data.choose.length; i++) {
+  //     var thisDate = this.data.choose[i];
+  //     var thisMonth = thisDate.substr(5, 2);
+  //     var thisDay = thisDate.substr(8, 2);
+  //     chooseDate.push(parseInt(thisMonth) + '月' + parseInt(thisDay) + '日')
+  //   }
+  //   this.setData({
+  //     // calendar: false,//点击按钮后隐藏日历
+  //     chooseDate: chooseDate,
+  //   })
+  //   console.log(chooseDate);
+  // },
   //翻页加载
-  pageaddload: function () {
+  // pageaddload: function () {
+  //   this.createCalendar();
+  // },
+
+  lower: function () {
     this.createCalendar();
   },
-  //选择日期
-  chooseCalendar: function (e) {
-    var data = this.data.calendarLIST;
-    var onetwo = e.target.dataset.whidhmonth.split('-');
-    var choose = this.data.choose;
-    if (data[onetwo[0]].current > 0 && data[onetwo[0]].arr[onetwo[1] - 1].day < data[onetwo[0]].current) {
-      return false;
-    }
-    if (data[onetwo[0]].arr[onetwo[1] - 1].isCheck == 'isCheck') {
-      data[onetwo[0]].arr[onetwo[1] - 1].isCheck = '';
-      choose.splice(choose.indexOf(data[onetwo[0]].arr[onetwo[1] - 1].code), 1);
-    } else {
-      data[onetwo[0]].arr[onetwo[1] - 1].isCheck = 'isCheck';
-      choose.push(data[onetwo[0]].arr[onetwo[1] - 1].code)
-    }
-    choose = choose.sort();
-    this.setData({
-      calendarLIST: data,
-      choose: choose,
-    })
-    console.log(e.target.dataset, 'isCheck', data[onetwo[0]].arr[onetwo[1] - 1].day, data[onetwo[0]].current)
+
+    upper: function () {
+    this.pastCalendar();
   },
+
+  //选择日期
+  // chooseCalendar: function (e) {
+  //   var data = this.data.calendarLIST;
+  //   var onetwo = e.target.dataset.whidhmonth.split('-');
+  //   var choose = this.data.choose;
+  //   if (data[onetwo[0]].current > 0 && data[onetwo[0]].arr[onetwo[1] - 1].day < data[onetwo[0]].current) {
+  //     return false;
+  //   }
+  //   if (data[onetwo[0]].arr[onetwo[1] - 1].isCheck == 'isCheck') {
+  //     data[onetwo[0]].arr[onetwo[1] - 1].isCheck = '';
+  //     choose.splice(choose.indexOf(data[onetwo[0]].arr[onetwo[1] - 1].code), 1);
+  //   } else {
+  //     data[onetwo[0]].arr[onetwo[1] - 1].isCheck = 'isCheck';
+  //     choose.push(data[onetwo[0]].arr[onetwo[1] - 1].code)
+  //   }
+  //   choose = choose.sort();
+  //   this.setData({
+  //     calendarLIST: data,
+  //     choose: choose,
+  //   })
+  //   console.log(e.target.dataset, 'isCheck', data[onetwo[0]].arr[onetwo[1] - 1].day, data[onetwo[0]].current)
+  // },
   //生成单个月份小日历
+
+  pastCalendar: function () {
+    var calArr = [];
+    var today = this.data.today,
+      current = -1;
+    if (this.data.pMonth == '') {
+    this.setData({
+      pMonth: today.substr(5, 2),
+      pYear: today.substr(0, 4)
+    })
+    } 
+      var lastMonth = parseInt(this.data.pMonth),
+        lastYear = parseInt(this.data.pYear);
+      if (lastMonth == 1) {
+        lastMonth = 12;
+        lastYear--;
+      } else {
+        lastMonth--;
+      }
+      lastMonth += '';
+      lastYear += '';
+      if (lastMonth.length == 1) {
+        lastMonth = '0' + lastMonth;
+      }
+      this.setData({
+        pMonth: lastMonth,
+        pYear: lastYear
+      })
+      var firstDay = (new Date(lastYear + '-' + lastMonth + '-01')).getDay(),
+        lastDay = (new Date(lastYear, lastMonth, 0)).getDate();
+    
+    var calLength = firstDay + lastDay + 1;
+    var frontweek = (new Date(lastYear + '-' + lastMonth + '-01')).getDay();
+    var weekend = '';
+    var whidhMonth = this.data.calendarLIST.length;
+    for (var i = 1; i < calLength; i++) {
+      if (i <= firstDay) {
+        var cell = 0;
+      } else {
+        frontweek++;
+        var cell = i - firstDay;
+      }
+      if (frontweek % 7 == 0 || frontweek % 7 == 1) {
+        weekend = 'weekend';
+      } else {
+        weekend = '';
+      }
+      calArr.push({ day: cell, weekend: weekend, code: lastYear + '-' + lastMonth + '-' + ((cell + '').length == 1 ? '0' + (cell + '') : cell), whidhMonth: whidhMonth + '-' + i})
+    }
+    var itoday = (new Date()).getDate() + '';
+    itoday = itoday.length == 1 ? '0' + itoday : itoday;
+    var nowday = lastYear + '-' + lastMonth + '-' + itoday;
+
+    var month = [{
+      year: lastYear,
+      month: this.data.calendarMonthName[parseInt(this.data.pMonth) - 1] + '月',
+      current: current,
+      weekend: weekend,
+      arr: calArr
+    }];
+    month = month.concat(this.data.calendarLIST);
+    this.setData({
+      calendarLIST: month,
+    })
+
+  },
+
+
+
   createCalendar: function () {
     var calArr = [],
       current = 0;
     if (this.data.currentMonth == '') {
       var today = this.data.today;
+      var current = (new Date()).getDate();
       var firstDay = (new Date(today.substr(0, 8) + '01')).getDay(),
         lastDay = (new Date(today.substr(0, 4), today.substr(5, 2), 0)).getDate();
       this.setData({
@@ -115,7 +196,7 @@ Page({
       } else {
         weekend = '';
       }
-      calArr.push({ day: cell, weekend: weekend, code: nextYear + '-' + nextMonth + '-' + ((cell + '').length == 1 ? '0' + (cell + '') : cell), whidhMonth: whidhMonth + '-' + i, isCheck: '' })
+      calArr.push({ day: cell, weekend: weekend, code: nextYear + '-' + nextMonth + '-' + ((cell + '').length == 1 ? '0' + (cell + '') : cell), whidhMonth: whidhMonth + '-' + i})
     }
     var itoday = (new Date()).getDate() + '';
     itoday = itoday.length == 1 ? '0' + itoday : itoday;
@@ -147,6 +228,7 @@ Page({
       today: now,
     })
     //根据屏幕大小初始化日历铺满，一个函数输出一个月份
+    //this.pastCalendar();
     this.createCalendar();
     this.createCalendar();
     this.createCalendar();
