@@ -42,3 +42,8 @@
 <view class="uploader">
   <navigator url="../cest/cest" open-type="navigate" class="uploader-text"><text>calendar test</text></navigator>
 </view>
+
+
+<view class="uploader">
+  <navigator url="../ctest2/ctest2" open-type="navigate" class="uploader-text"><text>calendar test2</text></navigator>
+</view>
