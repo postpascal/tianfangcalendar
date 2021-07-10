@@ -39,9 +39,21 @@
 </view>
 
 
-<view class="uploader">
-  <navigator url="../cest/cest" open-type="navigate" class="uploader-text"><text>日历</text></navigator>
-</view>
-<view class="uploader">
+
+<!-- <view class="btn1">
+    <navigator url="../cest/cest" open-type="navigate" class="uploader-text">
+        <view>日历 </view>
+    </navigator>
+</view> -->
+
+<!-- <view class="uploader"> -->
+<button class='btn1' open-type="contact" bindcontact="handleContact">
+    <!-- <image class='btnImg' src='../../images/wx.png'></image> -->
+    <icon class="icon-box-title" type="info" size="23"></icon>
+    <view>联系我们 </view>
+</button>
+<!-- </view> -->
+
+<!-- <view class="uploader">
   <navigator url="../today/today" open-type="navigate" class="uploader-text"><text>今日</text></navigator>
-</view>
+</view> -->

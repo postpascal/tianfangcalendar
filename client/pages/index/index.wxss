@@ -127,3 +127,26 @@ page {
     line-height: 36rpx;
     word-break: break-all;
 }
+
+.btn1 {
+    width: 80%;
+    margin-top: 20rpx;
+    background-color: rgb(203, 236, 203);
+    color: rgb(36, 33, 33);
+    border-radius: 98rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btnImg {
+    margin-right: 8rpx;
+    width: 46rpx;
+    height: 46rpx;
+  }
+  
+  .btn1::after {
+    border-radius: 98rpx;
+    border: 0; 
+  }
