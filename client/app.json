@@ -1,9 +1,7 @@
 {
   "pages": [
     "pages/cest/cest",
-    "pages/index/index",
-    "pages/addCgi/addCgi",
-    "pages/today/today"
+    "pages/index/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -11,12 +9,6 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "天放日历",
     "navigationBarTextStyle": "black"
-  },
-  "plugins": {
-    "myPlugin": {
-      "version": "1.0.0",
-      "provider": "wx84472d5652384779"
-    }
   },
   "sitemapLocation": "sitemap.json"
 }
