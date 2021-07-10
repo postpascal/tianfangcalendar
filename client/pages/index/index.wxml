@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
     <!-- 用户登录测试 -->
-    <view class="userinfo">
+    <!-- <view class="userinfo">
         <image
             class="userinfo-avatar"
             src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"
@@ -11,11 +11,11 @@
             <button class="userinfo-nickname" wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击测试登录接口</button>
             <text class="userinfo-nickname" wx:else>{{userInfo.nickName}}</text>
         </view>
-    </view>
+    </view> -->
 
 
     <!-- 上传图片测试 -->
-    <view class="uploader">
+    <!-- <view class="uploader">
         <view class="uploader-text" bindtap="doUpload">
             <text>上传图片</text>
         </view>
@@ -27,21 +27,21 @@
                 bindtap="previewImg"
             ></image>
         </view>
-    </view>
+    </view> -->
 
 
     <!-- 上传图片测试 -->
-    <view class="uploader">
+    <!-- <view class="uploader">
         <navigator url="../addCgi/addCgi" open-type="navigate" class="uploader-text">
             <text>快速增加 CGI</text>
         </navigator>
-    </view>
+    </view> -->
 </view>
 
 
 <view class="uploader">
-  <navigator url="../cest/cest" open-type="navigate" class="uploader-text"><text>calendar test</text></navigator>
+  <navigator url="../cest/cest" open-type="navigate" class="uploader-text"><text>日历</text></navigator>
 </view>
 <view class="uploader">
-  <navigator url="../today/today" open-type="navigate" class="uploader-text"><text>today</text></navigator>
+  <navigator url="../today/today" open-type="navigate" class="uploader-text"><text>今日</text></navigator>
 </view>

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/cest/cest",
     "pages/index/index",
     "pages/addCgi/addCgi",
-    "pages/cest/cest",
     "pages/today/today"
   ],
   "window": {
