@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/cest/cest",
-    "pages/index/index"
+    "pages/wwe/wwe",
+    "pages/index/index",
+    "pages/cest/cest"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

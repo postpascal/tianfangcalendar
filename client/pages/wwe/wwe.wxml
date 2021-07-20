@@ -1,0 +1,17 @@
+<!--client/pages/wwe/wwe.wxml-->
+
+
+<view class="center" >
+  <lucky-wheel
+    id="myLucky"
+    width="500rpx"
+    height="500rpx"
+    blocks="{{blocks}}"
+    prizes="{{prizes}}"
+    buttons="{{buttons}}"
+    defaultStyle="{{defaultStyle}}"
+    bindstart="start"
+    bindend="end"
+  />
+</view>
+
