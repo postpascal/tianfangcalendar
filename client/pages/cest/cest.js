@@ -233,4 +233,10 @@ Page({
     this.createCalendar();
     this.createCalendar();
   }
+
+  onShareAppMessage: function(res) {
+    return {
+      title: '留学清茶',
+    }
+  }
 })

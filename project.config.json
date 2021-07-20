@@ -12,8 +12,8 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "useMultiFrameRuntime": false,
-    "useApiHook": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
     "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
@@ -22,10 +22,10 @@
     },
     "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
-    "minifyWXSS": true,
-    "showES6CompileOption": false,
     "packNpmManually": false,
-    "packNpmRelationList": []
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "showES6CompileOption": false
   },
   "appid": "wx1e592ae3d0a4e6f8",
   "projectname": "tianfangcalendar",

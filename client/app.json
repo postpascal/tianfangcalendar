@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/tt/tt",
     "pages/wwe/wwe",
     "pages/index/index",
     "pages/cest/cest"
