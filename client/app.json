@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/wwe/wwe",
     "pages/index/index",
-    "pages/cest/cest"
+    "pages/cest/cest",
+    "pages/wwe/wwe"
 
   ],
   "window": {

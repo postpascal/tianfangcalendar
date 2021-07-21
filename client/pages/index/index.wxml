@@ -40,11 +40,14 @@
 
 
 
-<!-- <view class="btn1">
-    <navigator url="../cest/cest" open-type="navigate" class="uploader-text">
-        <view>日历 </view>
-    </navigator>
-</view> -->
+
+
+<view  class="container">
+  <navigator class='btn1'  url="../cest/cest" open-type="navigate" hover-class="navigator-hover">日历</navigator>
+  <navigator class='btn1'  url="../wwe/wwet" open-type="navigate" hover-class="other-navigator-hover">今天吃什么</navigator>
+
+</view>
+
 
 <!-- <view class="uploader"> -->
 <button class='btn1' open-type="contact" bindcontact="handleContact">
