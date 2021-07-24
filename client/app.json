@@ -2,8 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/cest/cest",
-    "pages/wwe/wwe",
-    "pages/constellation/constellation"
+    "pages/wwe/wwe"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

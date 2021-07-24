@@ -89,7 +89,7 @@ changeconstellation(e) {
   this.setData({
     constellationListIndex: e.detail.value
   });
-  this.getConstellation(Number(e.detail.value)+1)
+  // this.getConstellation(Number(e.detail.value)+1)
 
 },
 
