@@ -6,9 +6,9 @@ Page({
    */
   data: {
     prizes: [
-      { title: '必胜客', background: '#f9e3bb', fonts: [{ text: '必胜客', top: '18%' }] },
-      { title: '井格', background: '#f8d384', fonts: [{ text: '井格', top: '18%' }] },
-      { title: '螺蛳粉', background: '#f9e3bb', fonts: [{ text: '螺蛳粉', top: '18%' }] },
+      { title: '外卖', background: '#f9e3bb', fonts: [{ text: '外卖', top: '18%' }] },
+      { title: '地铁站', background: '#f8d384', fonts: [{ text: '地铁站', top: '18%' }] },
+      { title: '盒饭', background: '#f9e3bb', fonts: [{ text: '盒饭', top: '18%' }] },
       { title: '头一号', background: '#f8d384', fonts: [{ text: '头一号', top: '18%' }] },
       { title: '绝食一顿', background: '#4B0082', fonts: [{ text: '绝食一顿', top: '18%' }] },
 

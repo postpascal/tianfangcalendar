@@ -4,11 +4,12 @@
   "miniprogramRoot": "client/",
   "qcloudRoot": "server/",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "postcss": true,
     "minified": true,
     "newFeature": true,
+    "scopeDataCheck": false,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,

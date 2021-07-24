@@ -1,0 +1,17 @@
+<!--client/pages/constellation/constellation.wxml-->
+<view class="container">
+
+<picker bindchange="changeconstellation" value="{{constellationListIndex}}" range="{{constellationList}}">
+    <view class="picker">
+      星座：{{constellationList[constellationListIndex]}}
+    </view>
+  </picker>
+
+
+
+<div style="padding:20px;">
+  <h2>今日运势：</h2>
+
+  <p>{{todaypresummary}}</p>
+</div>
+</view>
