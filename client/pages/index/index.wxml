@@ -45,6 +45,7 @@
 <view  class="container">
   <navigator class='btn1'  url="../cest/cest" open-type="navigate" hover-class="navigator-hover">日历</navigator>
   <navigator class='btn1'  url="../wwe/wwe" open-type="navigate" hover-class="other-navigator-hover">今天吃什么</navigator>
+  <navigator class='btn1'  url="../constellation/constellation" open-type="navigate" hover-class="other-navigator-hover">星座</navigator>
 
 
 </view>

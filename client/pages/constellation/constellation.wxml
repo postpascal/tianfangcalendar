@@ -2,16 +2,21 @@
 <view class="container">
 
 <picker bindchange="changeconstellation" value="{{constellationListIndex}}" range="{{constellationList}}">
-    <view class="picker">
+    <view style="font-size:48rpx;" class="picker">
       星座：{{constellationList[constellationListIndex]}}
     </view>
   </picker>
 
 
+  
+  <scroll-view scroll-y="true" bindscrolltoupper="upper" >
+  
+<text>今日运势：{{todaypresummary}}\n</text>
 
-<div style="padding:20px;">
-  <h2>今日运势：</h2>
+<text>明日运势：{{tomorrowpresummary}}\n</text>
+<text>本月运势：{{monthsummary}}\n</text>
 
-  <p>运势会有起伏的情况，不过对你的考验不多，遇到机会还是值得全力以赴的。就是在机会的选择上不要过于小心翼翼，这会导致在自己错失良机，很可能就拱手让人了。生活方面比较归园田居式，对物质追求不高。</p>
-</div>
+<text>今年运势：{{yearsummary}}\n</text>
+
+</scroll-view>
 </view>

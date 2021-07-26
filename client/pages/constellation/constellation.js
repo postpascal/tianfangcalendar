@@ -36,8 +36,10 @@ Page({
 getConstellation: function (i) {
   var that = this
    console.log("LOG",i)
+   const today = new Date().toISOString().slice(0, 10)
+console.log(today)
   wx.request({
-    url: 'https://api.jisuapi.com/astro/fortune?astroid='+i+'&date=2021-07-21&appkey=1112640d4f41cac6',
+    url: 'https://api.jisuapi.com/astro/fortune?astroid='+i+'&date='+today+'&appkey=1112640d4f41cac6',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -89,7 +91,7 @@ changeconstellation(e) {
   this.setData({
     constellationListIndex: e.detail.value
   });
-  // this.getConstellation(Number(e.detail.value)+1)
+  this.getConstellation(Number(e.detail.value)+1)
 
 },
 
